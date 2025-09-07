@@ -12,6 +12,7 @@ import LoadingView from './src/components/LoadingView';
 import DeviceIdCard from './src/components/DeviceIdCard';
 import ReturnSection from './src/components/ReturnSection';
 import AppButton from './src/components/AppButton';
+import Clipboard from '@react-native-clipboard/clipboard';
 
 const App = (): React.JSX.Element => {
   const [deviceId, setDeviceId] = useState('');
@@ -99,12 +100,12 @@ const App = (): React.JSX.Element => {
   };
 
   const copyDeviceId = () => {
-    Alert.alert('Copied', 'Device ID copied to console');
+    Clipboard.setString(deviceId);
   };
 
   const openURLWithDeviceId = () => {
     Linking.openURL(
-      `https://www.google.com?deviceId=${encodeURIComponent(deviceId)}`,
+      `https://www.youtube.com/watch?v=xvFZjo5PgG0&list=RDxvFZjo5PgG0&start_radio=1`,
     ).catch(() => {
       Alert.alert('Error', 'Failed to open YouTube');
     });
@@ -130,12 +131,12 @@ const App = (): React.JSX.Element => {
                 Open this app from your website to get the device ID
               </Text>
             )}
-            {/* <AppButton
+            <AppButton
               label="Copy Device ID"
               onPress={copyDeviceId}
               backgroundColor="#34C759"
               style={styles.spacedButton}
-            /> */}
+            />
             <AppButton
               label="Open URL with Device ID"
               onPress={openURLWithDeviceId}
