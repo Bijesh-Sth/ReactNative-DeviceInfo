@@ -137,12 +137,12 @@ const App = (): React.JSX.Element => {
               backgroundColor="#34C759"
               style={styles.spacedButton}
             />
-            <AppButton
+            {/* <AppButton
               label="Open URL with Device ID"
               onPress={openURLWithDeviceId}
               backgroundColor="#0A84FF"
               style={styles.spacedButton}
-            />
+            />*/}
             {/* <AppButton
               label="Refresh Device ID"
               onPress={getDeviceId}
